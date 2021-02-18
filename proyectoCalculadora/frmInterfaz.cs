@@ -180,7 +180,7 @@ namespace proyectoCalculadora
         {
             //Logica
             string operacion = txtPantalla.Text;
-            char[] delimitador = {'*','/'};
+            char[] delimitador = {'*','/','-'};
             string[] valores = operacion.Split(delimitador);
 
             for(int i=0; i < valores.Length; i++)
