@@ -17,6 +17,10 @@ namespace proyectoCalculadora
             InitializeComponent();
         }
 
+        operacionesBasicas opBasicas = new operacionesBasicas();
+        operacionesUnarias opUnarias = new operacionesUnarias();
+        funcionesTrigonometricas opTrigonometricas = new funcionesTrigonometricas();
+
         private void btn1_Click(object sender, EventArgs e)
         {
             txtPantalla.Text += "1";
@@ -176,7 +180,7 @@ namespace proyectoCalculadora
         {
             //Logica
             string operacion = txtPantalla.Text;
-            char[] delimitador = {'*','/', '+', '-'};
+            char[] delimitador = {'*','/'};
             string[] valores = operacion.Split(delimitador);
 
             for(int i=0; i < valores.Length; i++)
