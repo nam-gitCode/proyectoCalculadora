@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace proyectoCalculadora
 {
-    class datosGrafica 
+    class datosGrafica :operadores
     {
         private double j1 = 0;
         private double j2 = 0;

@@ -175,14 +175,16 @@ namespace proyectoCalculadora
         private void btnIgual_Click(object sender, EventArgs e)
         {
             //Logica
-            string operacion = txtPantalla.Text;
+            /*string operacion = txtPantalla.Text;
             char[] delimitador = {'*','/', '+', '-'};
             string[] valores = operacion.Split(delimitador);
 
             for(int i=0; i < valores.Length; i++)
             {
                 lblPruebas.Text += valores[i] + "\n";
-            }
+            }*/
+
+            
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)

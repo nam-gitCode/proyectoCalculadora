@@ -19,8 +19,13 @@ namespace proyectoCalculadora
 
         private void btnGraf1_Click(object sender, EventArgs e)
         {
-            for (int j = 0; j < 40; j++)
-                chart1.Series["F1"].Points.AddXY(j, j * j);
+            
+           
+        }
+
+        private void btnCerrarGrafica_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
