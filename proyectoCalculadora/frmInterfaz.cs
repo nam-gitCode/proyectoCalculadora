@@ -20,6 +20,7 @@ namespace proyectoCalculadora
         operacionesBasicas opBasicas = new operacionesBasicas();
         operacionesUnarias opUnarias = new operacionesUnarias();
         funcionesTrigonometricas opTrigonometricas = new funcionesTrigonometricas();
+        operadores simbolos = new operadores();
 
         private void btn1_Click(object sender, EventArgs e)
         {
@@ -79,21 +80,25 @@ namespace proyectoCalculadora
         private void btnSuma_Click(object sender, EventArgs e)
         {
             txtPantalla.Text += "+";
+            simbolos.Operador = "suma";
         }
 
         private void btnResta_Click(object sender, EventArgs e)
         {
             txtPantalla.Text += "-";
+            simbolos.Operador = "resta";
         }
 
         private void btnMultiplicacion_Click(object sender, EventArgs e)
         {
             txtPantalla.Text += "*";
+            simbolos.Operador = "multi";
         }
 
         private void btnDivision_Click(object sender, EventArgs e)
         {
             txtPantalla.Text += "/";
+            simbolos.Operador = "div";
         }
 
         private void btnNCien_Click(object sender, EventArgs e)
@@ -178,15 +183,7 @@ namespace proyectoCalculadora
 
         private void btnIgual_Click(object sender, EventArgs e)
         {
-            //Logica
-            string operacion = txtPantalla.Text;
-            char[] delimitador = {'*','/','-'};
-            string[] valores = operacion.Split(delimitador);
-
-            for(int i=0; i < valores.Length; i++)
-            {
-                lblPruebas.Text += valores[i] + "\n";
-            }
+            
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -199,6 +196,10 @@ namespace proyectoCalculadora
             txtPantalla.Text = "";
         }
 
-        
+        private void btnGrafica_Click(object sender, EventArgs e)
+        {
+            frmGraficadora formGrafica = new frmGraficadora();
+            formGrafica.Show();
+        }
     }
 }

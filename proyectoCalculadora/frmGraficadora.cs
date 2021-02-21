@@ -10,17 +10,21 @@ using System.Windows.Forms;
 
 namespace proyectoCalculadora
 {
-    public partial class frmGraficas : Form
+    public partial class frmGraficadora : Form
     {
-        public frmGraficas()
+        public frmGraficadora()
         {
             InitializeComponent();
         }
 
-        private void btnGraf1_Click(object sender, EventArgs e)
+        private void frmGraficadora_Load(object sender, EventArgs e)
         {
-            for (int j = 0; j < 40; j++)
-                chart1.Series["F1"].Points.AddXY(j, j * j);
+
+        }
+
+        private void btnCerrarGraf_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

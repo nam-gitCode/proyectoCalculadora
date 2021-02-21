@@ -1,5 +1,4 @@
 C:\Users\kesec\source\repos\proyectoCalculadora\proyectoCalculadora\obj\Debug\proyectoCalculadora.csprojAssemblyReference.cache
-C:\Users\kesec\source\repos\proyectoCalculadora\proyectoCalculadora\obj\Debug\proyectoCalculadora.frmGraficas.resources
 C:\Users\kesec\source\repos\proyectoCalculadora\proyectoCalculadora\obj\Debug\proyectoCalculadora.frmInterfaz.resources
 C:\Users\kesec\source\repos\proyectoCalculadora\proyectoCalculadora\obj\Debug\proyectoCalculadora.Properties.Resources.resources
 C:\Users\kesec\source\repos\proyectoCalculadora\proyectoCalculadora\obj\Debug\proyectoCalculadora.csproj.GenerateResource.cache
@@ -9,3 +8,4 @@ C:\Users\kesec\source\repos\proyectoCalculadora\proyectoCalculadora\bin\Debug\pr
 C:\Users\kesec\source\repos\proyectoCalculadora\proyectoCalculadora\bin\Debug\proyectoCalculadora.pdb
 C:\Users\kesec\source\repos\proyectoCalculadora\proyectoCalculadora\obj\Debug\proyectoCalculadora.exe
 C:\Users\kesec\source\repos\proyectoCalculadora\proyectoCalculadora\obj\Debug\proyectoCalculadora.pdb
+C:\Users\kesec\source\repos\proyectoCalculadora\proyectoCalculadora\obj\Debug\proyectoCalculadora.frmGraficadora.resources
