@@ -66,19 +66,20 @@ namespace proyectoCalculadora
             this.btnGrafica = new System.Windows.Forms.Button();
             this.btnPorcentaje = new System.Windows.Forms.Button();
             this.btnGrados = new System.Windows.Forms.Button();
+            this.txtOperacion = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtPantalla
             // 
             this.txtPantalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPantalla.Location = new System.Drawing.Point(12, 12);
+            this.txtPantalla.Location = new System.Drawing.Point(13, 29);
             this.txtPantalla.Name = "txtPantalla";
             this.txtPantalla.Size = new System.Drawing.Size(299, 53);
             this.txtPantalla.TabIndex = 0;
             // 
             // btn7
             // 
-            this.btn7.Location = new System.Drawing.Point(12, 224);
+            this.btn7.Location = new System.Drawing.Point(12, 234);
             this.btn7.Name = "btn7";
             this.btn7.Size = new System.Drawing.Size(55, 40);
             this.btn7.TabIndex = 1;
@@ -88,7 +89,7 @@ namespace proyectoCalculadora
             // 
             // btn8
             // 
-            this.btn8.Location = new System.Drawing.Point(73, 224);
+            this.btn8.Location = new System.Drawing.Point(73, 234);
             this.btn8.Name = "btn8";
             this.btn8.Size = new System.Drawing.Size(55, 40);
             this.btn8.TabIndex = 2;
@@ -98,7 +99,7 @@ namespace proyectoCalculadora
             // 
             // btn9
             // 
-            this.btn9.Location = new System.Drawing.Point(134, 224);
+            this.btn9.Location = new System.Drawing.Point(134, 234);
             this.btn9.Name = "btn9";
             this.btn9.Size = new System.Drawing.Size(55, 40);
             this.btn9.TabIndex = 3;
@@ -108,7 +109,7 @@ namespace proyectoCalculadora
             // 
             // btn4
             // 
-            this.btn4.Location = new System.Drawing.Point(12, 270);
+            this.btn4.Location = new System.Drawing.Point(12, 280);
             this.btn4.Name = "btn4";
             this.btn4.Size = new System.Drawing.Size(55, 40);
             this.btn4.TabIndex = 4;
@@ -118,7 +119,7 @@ namespace proyectoCalculadora
             // 
             // btn5
             // 
-            this.btn5.Location = new System.Drawing.Point(73, 270);
+            this.btn5.Location = new System.Drawing.Point(73, 280);
             this.btn5.Name = "btn5";
             this.btn5.Size = new System.Drawing.Size(55, 40);
             this.btn5.TabIndex = 5;
@@ -128,7 +129,7 @@ namespace proyectoCalculadora
             // 
             // btn6
             // 
-            this.btn6.Location = new System.Drawing.Point(134, 270);
+            this.btn6.Location = new System.Drawing.Point(134, 280);
             this.btn6.Name = "btn6";
             this.btn6.Size = new System.Drawing.Size(55, 40);
             this.btn6.TabIndex = 6;
@@ -138,7 +139,7 @@ namespace proyectoCalculadora
             // 
             // btn1
             // 
-            this.btn1.Location = new System.Drawing.Point(12, 316);
+            this.btn1.Location = new System.Drawing.Point(12, 326);
             this.btn1.Name = "btn1";
             this.btn1.Size = new System.Drawing.Size(55, 40);
             this.btn1.TabIndex = 7;
@@ -148,7 +149,7 @@ namespace proyectoCalculadora
             // 
             // btn2
             // 
-            this.btn2.Location = new System.Drawing.Point(73, 316);
+            this.btn2.Location = new System.Drawing.Point(73, 326);
             this.btn2.Name = "btn2";
             this.btn2.Size = new System.Drawing.Size(55, 40);
             this.btn2.TabIndex = 8;
@@ -158,7 +159,7 @@ namespace proyectoCalculadora
             // 
             // btn3
             // 
-            this.btn3.Location = new System.Drawing.Point(134, 316);
+            this.btn3.Location = new System.Drawing.Point(134, 326);
             this.btn3.Name = "btn3";
             this.btn3.Size = new System.Drawing.Size(55, 40);
             this.btn3.TabIndex = 9;
@@ -168,7 +169,7 @@ namespace proyectoCalculadora
             // 
             // btn0
             // 
-            this.btn0.Location = new System.Drawing.Point(12, 362);
+            this.btn0.Location = new System.Drawing.Point(12, 372);
             this.btn0.Name = "btn0";
             this.btn0.Size = new System.Drawing.Size(55, 40);
             this.btn0.TabIndex = 10;
@@ -178,7 +179,7 @@ namespace proyectoCalculadora
             // 
             // btnPunto
             // 
-            this.btnPunto.Location = new System.Drawing.Point(73, 361);
+            this.btnPunto.Location = new System.Drawing.Point(73, 371);
             this.btnPunto.Name = "btnPunto";
             this.btnPunto.Size = new System.Drawing.Size(55, 40);
             this.btnPunto.TabIndex = 11;
@@ -188,7 +189,7 @@ namespace proyectoCalculadora
             // 
             // btnNCien
             // 
-            this.btnNCien.Location = new System.Drawing.Point(134, 362);
+            this.btnNCien.Location = new System.Drawing.Point(134, 372);
             this.btnNCien.Name = "btnNCien";
             this.btnNCien.Size = new System.Drawing.Size(55, 40);
             this.btnNCien.TabIndex = 12;
@@ -198,7 +199,7 @@ namespace proyectoCalculadora
             // 
             // btnMultiplicacion
             // 
-            this.btnMultiplicacion.Location = new System.Drawing.Point(195, 270);
+            this.btnMultiplicacion.Location = new System.Drawing.Point(195, 280);
             this.btnMultiplicacion.Name = "btnMultiplicacion";
             this.btnMultiplicacion.Size = new System.Drawing.Size(55, 40);
             this.btnMultiplicacion.TabIndex = 13;
@@ -208,7 +209,7 @@ namespace proyectoCalculadora
             // 
             // btnSuma
             // 
-            this.btnSuma.Location = new System.Drawing.Point(195, 316);
+            this.btnSuma.Location = new System.Drawing.Point(195, 326);
             this.btnSuma.Name = "btnSuma";
             this.btnSuma.Size = new System.Drawing.Size(55, 40);
             this.btnSuma.TabIndex = 14;
@@ -218,7 +219,7 @@ namespace proyectoCalculadora
             // 
             // btnIgual
             // 
-            this.btnIgual.Location = new System.Drawing.Point(195, 361);
+            this.btnIgual.Location = new System.Drawing.Point(195, 371);
             this.btnIgual.Name = "btnIgual";
             this.btnIgual.Size = new System.Drawing.Size(55, 40);
             this.btnIgual.TabIndex = 15;
@@ -228,7 +229,7 @@ namespace proyectoCalculadora
             // 
             // btnResta
             // 
-            this.btnResta.Location = new System.Drawing.Point(256, 316);
+            this.btnResta.Location = new System.Drawing.Point(256, 326);
             this.btnResta.Name = "btnResta";
             this.btnResta.Size = new System.Drawing.Size(55, 40);
             this.btnResta.TabIndex = 16;
@@ -238,7 +239,7 @@ namespace proyectoCalculadora
             // 
             // btnDivision
             // 
-            this.btnDivision.Location = new System.Drawing.Point(256, 270);
+            this.btnDivision.Location = new System.Drawing.Point(256, 280);
             this.btnDivision.Name = "btnDivision";
             this.btnDivision.Size = new System.Drawing.Size(55, 40);
             this.btnDivision.TabIndex = 17;
@@ -248,7 +249,7 @@ namespace proyectoCalculadora
             // 
             // btnPi
             // 
-            this.btnPi.Location = new System.Drawing.Point(256, 362);
+            this.btnPi.Location = new System.Drawing.Point(256, 372);
             this.btnPi.Name = "btnPi";
             this.btnPi.Size = new System.Drawing.Size(55, 40);
             this.btnPi.TabIndex = 18;
@@ -258,7 +259,7 @@ namespace proyectoCalculadora
             // 
             // btnBorrar
             // 
-            this.btnBorrar.Location = new System.Drawing.Point(195, 224);
+            this.btnBorrar.Location = new System.Drawing.Point(195, 234);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(55, 40);
             this.btnBorrar.TabIndex = 19;
@@ -268,7 +269,7 @@ namespace proyectoCalculadora
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(257, 224);
+            this.btnLimpiar.Location = new System.Drawing.Point(257, 234);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(55, 40);
             this.btnLimpiar.TabIndex = 20;
@@ -278,7 +279,7 @@ namespace proyectoCalculadora
             // 
             // btnParentecisA
             // 
-            this.btnParentecisA.Location = new System.Drawing.Point(73, 178);
+            this.btnParentecisA.Location = new System.Drawing.Point(73, 188);
             this.btnParentecisA.Name = "btnParentecisA";
             this.btnParentecisA.Size = new System.Drawing.Size(55, 40);
             this.btnParentecisA.TabIndex = 21;
@@ -288,7 +289,7 @@ namespace proyectoCalculadora
             // 
             // btnParentecisB
             // 
-            this.btnParentecisB.Location = new System.Drawing.Point(134, 178);
+            this.btnParentecisB.Location = new System.Drawing.Point(134, 188);
             this.btnParentecisB.Name = "btnParentecisB";
             this.btnParentecisB.Size = new System.Drawing.Size(55, 40);
             this.btnParentecisB.TabIndex = 22;
@@ -298,7 +299,7 @@ namespace proyectoCalculadora
             // 
             // btnSeno
             // 
-            this.btnSeno.Location = new System.Drawing.Point(195, 178);
+            this.btnSeno.Location = new System.Drawing.Point(195, 188);
             this.btnSeno.Name = "btnSeno";
             this.btnSeno.Size = new System.Drawing.Size(55, 40);
             this.btnSeno.TabIndex = 23;
@@ -308,7 +309,7 @@ namespace proyectoCalculadora
             // 
             // btnCoseno
             // 
-            this.btnCoseno.Location = new System.Drawing.Point(196, 132);
+            this.btnCoseno.Location = new System.Drawing.Point(196, 142);
             this.btnCoseno.Name = "btnCoseno";
             this.btnCoseno.Size = new System.Drawing.Size(55, 40);
             this.btnCoseno.TabIndex = 24;
@@ -318,7 +319,7 @@ namespace proyectoCalculadora
             // 
             // btnTangente
             // 
-            this.btnTangente.Location = new System.Drawing.Point(196, 86);
+            this.btnTangente.Location = new System.Drawing.Point(196, 96);
             this.btnTangente.Name = "btnTangente";
             this.btnTangente.Size = new System.Drawing.Size(55, 40);
             this.btnTangente.TabIndex = 25;
@@ -328,7 +329,7 @@ namespace proyectoCalculadora
             // 
             // btnTangenteInversa
             // 
-            this.btnTangenteInversa.Location = new System.Drawing.Point(256, 86);
+            this.btnTangenteInversa.Location = new System.Drawing.Point(256, 96);
             this.btnTangenteInversa.Name = "btnTangenteInversa";
             this.btnTangenteInversa.Size = new System.Drawing.Size(55, 40);
             this.btnTangenteInversa.TabIndex = 26;
@@ -338,7 +339,7 @@ namespace proyectoCalculadora
             // 
             // btnSenoInverso
             // 
-            this.btnSenoInverso.Location = new System.Drawing.Point(256, 178);
+            this.btnSenoInverso.Location = new System.Drawing.Point(256, 188);
             this.btnSenoInverso.Name = "btnSenoInverso";
             this.btnSenoInverso.Size = new System.Drawing.Size(55, 40);
             this.btnSenoInverso.TabIndex = 27;
@@ -348,7 +349,7 @@ namespace proyectoCalculadora
             // 
             // btnCosenoInverso
             // 
-            this.btnCosenoInverso.Location = new System.Drawing.Point(256, 132);
+            this.btnCosenoInverso.Location = new System.Drawing.Point(256, 142);
             this.btnCosenoInverso.Name = "btnCosenoInverso";
             this.btnCosenoInverso.Size = new System.Drawing.Size(55, 40);
             this.btnCosenoInverso.TabIndex = 28;
@@ -358,7 +359,7 @@ namespace proyectoCalculadora
             // 
             // btnPotencia
             // 
-            this.btnPotencia.Location = new System.Drawing.Point(12, 178);
+            this.btnPotencia.Location = new System.Drawing.Point(12, 188);
             this.btnPotencia.Name = "btnPotencia";
             this.btnPotencia.Size = new System.Drawing.Size(55, 40);
             this.btnPotencia.TabIndex = 29;
@@ -368,7 +369,7 @@ namespace proyectoCalculadora
             // 
             // btnLogaritmoBase10
             // 
-            this.btnLogaritmoBase10.Location = new System.Drawing.Point(134, 132);
+            this.btnLogaritmoBase10.Location = new System.Drawing.Point(134, 142);
             this.btnLogaritmoBase10.Name = "btnLogaritmoBase10";
             this.btnLogaritmoBase10.Size = new System.Drawing.Size(55, 40);
             this.btnLogaritmoBase10.TabIndex = 30;
@@ -378,7 +379,7 @@ namespace proyectoCalculadora
             // 
             // btnLogaritmoNatural
             // 
-            this.btnLogaritmoNatural.Location = new System.Drawing.Point(73, 132);
+            this.btnLogaritmoNatural.Location = new System.Drawing.Point(73, 142);
             this.btnLogaritmoNatural.Name = "btnLogaritmoNatural";
             this.btnLogaritmoNatural.Size = new System.Drawing.Size(55, 40);
             this.btnLogaritmoNatural.TabIndex = 31;
@@ -388,7 +389,7 @@ namespace proyectoCalculadora
             // 
             // btnRaiz
             // 
-            this.btnRaiz.Location = new System.Drawing.Point(12, 132);
+            this.btnRaiz.Location = new System.Drawing.Point(12, 142);
             this.btnRaiz.Name = "btnRaiz";
             this.btnRaiz.Size = new System.Drawing.Size(55, 40);
             this.btnRaiz.TabIndex = 32;
@@ -398,7 +399,7 @@ namespace proyectoCalculadora
             // 
             // btnE
             // 
-            this.btnE.Location = new System.Drawing.Point(11, 86);
+            this.btnE.Location = new System.Drawing.Point(11, 96);
             this.btnE.Name = "btnE";
             this.btnE.Size = new System.Drawing.Size(55, 40);
             this.btnE.TabIndex = 33;
@@ -408,7 +409,7 @@ namespace proyectoCalculadora
             // 
             // btnGrafica
             // 
-            this.btnGrafica.Location = new System.Drawing.Point(12, 408);
+            this.btnGrafica.Location = new System.Drawing.Point(12, 418);
             this.btnGrafica.Name = "btnGrafica";
             this.btnGrafica.Size = new System.Drawing.Size(299, 40);
             this.btnGrafica.TabIndex = 34;
@@ -418,7 +419,7 @@ namespace proyectoCalculadora
             // 
             // btnPorcentaje
             // 
-            this.btnPorcentaje.Location = new System.Drawing.Point(136, 86);
+            this.btnPorcentaje.Location = new System.Drawing.Point(136, 96);
             this.btnPorcentaje.Name = "btnPorcentaje";
             this.btnPorcentaje.Size = new System.Drawing.Size(55, 40);
             this.btnPorcentaje.TabIndex = 35;
@@ -428,18 +429,27 @@ namespace proyectoCalculadora
             // 
             // btnGrados
             // 
-            this.btnGrados.Location = new System.Drawing.Point(73, 86);
+            this.btnGrados.Location = new System.Drawing.Point(73, 96);
             this.btnGrados.Name = "btnGrados";
             this.btnGrados.Size = new System.Drawing.Size(55, 40);
             this.btnGrados.TabIndex = 36;
             this.btnGrados.Text = "° \' \"";
             this.btnGrados.UseVisualStyleBackColor = true;
             // 
+            // txtOperacion
+            // 
+            this.txtOperacion.Enabled = false;
+            this.txtOperacion.Location = new System.Drawing.Point(13, 12);
+            this.txtOperacion.Name = "txtOperacion";
+            this.txtOperacion.Size = new System.Drawing.Size(299, 20);
+            this.txtOperacion.TabIndex = 37;
+            // 
             // frmInterfaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 460);
+            this.ClientSize = new System.Drawing.Size(323, 474);
+            this.Controls.Add(this.txtOperacion);
             this.Controls.Add(this.btnGrados);
             this.Controls.Add(this.btnPorcentaje);
             this.Controls.Add(this.btnGrafica);
@@ -523,5 +533,6 @@ namespace proyectoCalculadora
         private System.Windows.Forms.Button btnGrafica;
         private System.Windows.Forms.Button btnPorcentaje;
         private System.Windows.Forms.Button btnGrados;
+        private System.Windows.Forms.TextBox txtOperacion;
     }
 }

@@ -60,9 +60,9 @@
       <DependentUpon>frmInterfaz.cs</DependentUpon>
     </Compile>
     <Compile Include="funcionesTrigonometricas.cs" />
-    <Compile Include="lectorGraficadora.cs" />
-    <Compile Include="lectorOperacion.cs" />
+    <Compile Include="lectorCalculadora.cs" />
     <Compile Include="operacionesBasicas.cs" />
+    <Compile Include="operacionesCalculadora.cs" />
     <Compile Include="operacionesGraficadora.cs" />
     <Compile Include="operacionesUnarias.cs" />
     <Compile Include="operadores.cs" />

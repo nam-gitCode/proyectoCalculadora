@@ -8,34 +8,40 @@ namespace proyectoCalculadora
 {
     class funcionesTrigonometricas : operadores
     {
-        public double seno()
+        public double seno(double n1)
         {
-            return Math.Sin(this.Operando1);
+            n1 = n1 * (Math.PI / 180);
+            return Math.Sin(n1);
         }
 
-        public double coseno()
+        public double coseno(double n1)
         {
-            return Math.Cos(this.Operando1);
+            n1 = n1 * (Math.PI / 180);
+            return Math.Cos(n1);
         }
 
-        public double tangente()
+        public double tangente(double n1)
         {
-            return Math.Tan(this.Operando1);
+            n1 = n1 * (Math.PI / 180);
+            return Math.Tan(n1);
         }
 
-        public double senoInverso()
+        public double senoInverso(double n1)
         {
-            return Math.Asin(this.Operando1);
+            n1 = Math.Asin(n1);
+            return n1*(180/Math.PI);
         }
 
-        public double cosenoInverso()
+        public double cosenoInverso(double n1)
         {
-            return Math.Acos(this.Operando1);
+            n1 = Math.Acos(n1);
+            return n1 * (180 / Math.PI);
         }
 
-        public double tangenteInversa()
+        public double tangenteInversa(double n1)
         {
-            return Math.Atan(this.Operando1);
+            n1 = Math.Atan(n1);
+            return n1 * (180 / Math.PI);
         }
     }
 }

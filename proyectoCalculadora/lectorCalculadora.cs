@@ -1,38 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace proyectoCalculadora
 {
-    public partial class frmGraficadora : Form
+    class lectorCalculadora
     {
-        public frmGraficadora()
+        public List<string> cadenaOperacion (string baseOp)
         {
-            InitializeComponent();
-        }
-
-        operacionesGraficadora opG = new operacionesGraficadora();
-
-        private void frmGraficadora_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCerrarGraf_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnGraficar_Click(object sender, EventArgs e)
-        {
-
-            string baseOp = txtFuncion.Text;
             List<string> cadena = new List<string>() { };
             List<string> cadenaFinal = new List<string>() { };
 
@@ -40,6 +17,7 @@ namespace proyectoCalculadora
             int contador = 0;
             string operador = "";
             string nuevoNumero = "";
+            string fTrigonometricas = "";
             char[] conversion;
 
             conversion = baseOp.ToCharArray();
@@ -95,23 +73,36 @@ namespace proyectoCalculadora
                         operador = ")";
                         break;
                     }
-                    else if (cadena[c] != "+" || cadena[c] != "-" || cadena[c] != "*" || cadena[c] != "/" || cadena[c] != "^" || cadena[c] != "√" || cadena[c] != "(" || cadena[c] != ")")
+                    else if (cadena[c] == "s" || cadena[c] == "i" || cadena[c] == "n" || cadena[c] == "c" || cadena[c] == "o" || cadena[c] == "t" || cadena[c] == "a" || cadena[c] == "S" || cadena[c] == "C" || cadena[c] == "T")
+                    {
+                        fTrigonometricas += cadena[c];
+                    }
+                    else if (cadena[c] != "+" || cadena[c] != "-" || cadena[c] != "*" || cadena[c] != "/" || cadena[c] != "^" || cadena[c] != "√" || cadena[c] != "(" || cadena[c] != ")" || cadena[c] != "s" || cadena[c] != "i" || cadena[c] != "n")
                     {
                         nuevoNumero += cadena[c];
                     }
                 }
 
+                if (fTrigonometricas != "")
+                {
+                    cadenaFinal.Add(fTrigonometricas);
+                }
                 cadenaFinal.Add(nuevoNumero);
                 cadenaFinal.Add(operador);
 
                 cadena.RemoveRange(0, contador);
                 contador = 0;
+                fTrigonometricas = "";
                 nuevoNumero = "";
             }
 
-            if (cadenaFinal[cadenaFinal.Count - 1] == "+" || cadenaFinal[cadenaFinal.Count - 1] == "-" || cadenaFinal[cadenaFinal.Count - 1] == "*" || cadenaFinal[cadenaFinal.Count - 1] == "/")
+            if(cadenaFinal[cadenaFinal.Count -1] == "+" || cadenaFinal[cadenaFinal.Count - 1] == "-" || cadenaFinal[cadenaFinal.Count - 1] == "*" || cadenaFinal[cadenaFinal.Count - 1] == "/")
             {
                 cadenaFinal.RemoveAt(cadenaFinal.Count - 1);
+            }
+            else
+            {
+
             }
 
             for (int i = 0; i < cadenaFinal.Count; i++)
@@ -119,49 +110,8 @@ namespace proyectoCalculadora
                 cadenaFinal.Remove("");
             }
 
-            List<string> funcion = cadenaFinal;
-            
-            List<string> tmpLista = new List<string>() { };
-            int ejeX = -2;
+            return cadenaFinal;
 
-            for(int ejeY = 0; ejeY < 5; ejeY++)
-            {
-                for (int i = 0; i < funcion.Count; i++)
-                {
-                    if (funcion[i] == "x")
-                    {
-                        tmpLista.Add(ejeX.ToString());
-                    }
-                    else
-                    {
-                        tmpLista.Add(funcion[i]);
-                    }
-                }
-                chrGrafica.Series["f(x)"].Points.AddXY(Convert.ToDouble(ejeX),double.Parse(opG.calcular(tmpLista)));
-                tmpLista.Clear();
-                ejeX = ejeX + 1;
-            }
-
-        }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
-            chrGrafica.Series["f(x)"].Points.Clear();
-        }
-
-        private void btnPotencia_Click(object sender, EventArgs e)
-        {
-            txtFuncion.Text += "^";
-        }
-
-        private void btnPi_Click(object sender, EventArgs e)
-        {
-            txtFuncion.Text += "π";
-        }
-
-        private void btnRaiz_Click(object sender, EventArgs e)
-        {
-            txtFuncion.Text += "√";
         }
     }
 }

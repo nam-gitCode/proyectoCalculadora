@@ -21,6 +21,8 @@ namespace proyectoCalculadora
         operacionesUnarias opUnarias = new operacionesUnarias();
         funcionesTrigonometricas opTrigonometricas = new funcionesTrigonometricas();
         operadores simbolos = new operadores();
+        lectorCalculadora ltCalcu = new lectorCalculadora();
+        operacionesCalculadora opCalculadora = new operacionesCalculadora();
 
         private void btn1_Click(object sender, EventArgs e)
         {
@@ -183,7 +185,13 @@ namespace proyectoCalculadora
 
         private void btnIgual_Click(object sender, EventArgs e)
         {
-            
+            string baseOp = txtPantalla.Text;
+            txtOperacion.Enabled = true;
+            txtOperacion.Text = baseOp;
+            txtOperacion.Enabled = false;
+            List<string> operacionBase = ltCalcu.cadenaOperacion(baseOp);
+
+            txtPantalla.Text = opCalculadora.calcular(operacionBase);
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -194,6 +202,9 @@ namespace proyectoCalculadora
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtPantalla.Text = "";
+            txtOperacion.Enabled = true;
+            txtOperacion.Text = "";
+            txtOperacion.Enabled = false;
         }
 
         private void btnGrafica_Click(object sender, EventArgs e)
