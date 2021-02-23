@@ -11,15 +11,15 @@ namespace proyectoCalculadora
         public double potencia = 0;
 
 
-        public double Potencia()
+        public double Potencia(double x, double y)
         {
-            return Math.Pow(this.Operando1,potencia);
+            return Math.Pow(x,y);
 
         }
 
-        public double Raiz()
+        public double Raiz(double x)
         {
-            return Math.Sqrt(this.Operando1);
+            return Math.Sqrt(x);
 
         }
 

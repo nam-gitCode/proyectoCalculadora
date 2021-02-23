@@ -60,7 +60,10 @@
       <DependentUpon>frmInterfaz.cs</DependentUpon>
     </Compile>
     <Compile Include="funcionesTrigonometricas.cs" />
+    <Compile Include="lectorGraficadora.cs" />
+    <Compile Include="lectorOperacion.cs" />
     <Compile Include="operacionesBasicas.cs" />
+    <Compile Include="operacionesGraficadora.cs" />
     <Compile Include="operacionesUnarias.cs" />
     <Compile Include="operadores.cs" />
     <Compile Include="Program.cs" />

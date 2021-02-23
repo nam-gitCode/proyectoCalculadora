@@ -8,24 +8,24 @@ namespace proyectoCalculadora
 {
     class operacionesBasicas : operadores
     {
-        public double sumar()
+        public double sumar(double n1, double n2)
         {
-            return this.Operando1 + Operando2;
+            return n1 + n2;
         }
 
-        public double restar()
+        public double restar(double n1, double n2)
         {
-            return this.Operando1 - this.Operando2;
+            return n1 - n2;
         }
 
-        public double multiplicar()
+        public double multiplicar(double n1, double n2)
         {
-            return this.Operando1 * this.Operando2;
+            return n1 * n2;
         }
 
-        public double dividir()
+        public double dividir(double n1, double n2)
         {
-            return this.Operando1 / this.Operando2;
+            return n1 / n2;
         }
     }
 }
