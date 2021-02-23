@@ -65,17 +65,18 @@ namespace proyectoCalculadora
             this.btnE = new System.Windows.Forms.Button();
             this.btnGrafica = new System.Windows.Forms.Button();
             this.btnPorcentaje = new System.Windows.Forms.Button();
-            this.btnGrados = new System.Windows.Forms.Button();
+            this.btnFactorial = new System.Windows.Forms.Button();
             this.txtOperacion = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtPantalla
             // 
-            this.txtPantalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPantalla.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPantalla.Location = new System.Drawing.Point(13, 29);
             this.txtPantalla.Name = "txtPantalla";
-            this.txtPantalla.Size = new System.Drawing.Size(299, 53);
+            this.txtPantalla.Size = new System.Drawing.Size(299, 50);
             this.txtPantalla.TabIndex = 0;
+            this.txtPantalla.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btn7
             // 
@@ -427,14 +428,15 @@ namespace proyectoCalculadora
             this.btnPorcentaje.UseVisualStyleBackColor = true;
             this.btnPorcentaje.Click += new System.EventHandler(this.btnPorcentaje_Click);
             // 
-            // btnGrados
+            // btnFactorial
             // 
-            this.btnGrados.Location = new System.Drawing.Point(73, 96);
-            this.btnGrados.Name = "btnGrados";
-            this.btnGrados.Size = new System.Drawing.Size(55, 40);
-            this.btnGrados.TabIndex = 36;
-            this.btnGrados.Text = "° \' \"";
-            this.btnGrados.UseVisualStyleBackColor = true;
+            this.btnFactorial.Location = new System.Drawing.Point(73, 96);
+            this.btnFactorial.Name = "btnFactorial";
+            this.btnFactorial.Size = new System.Drawing.Size(55, 40);
+            this.btnFactorial.TabIndex = 36;
+            this.btnFactorial.Text = "!n";
+            this.btnFactorial.UseVisualStyleBackColor = true;
+            this.btnFactorial.Click += new System.EventHandler(this.btnFactorial_Click);
             // 
             // txtOperacion
             // 
@@ -450,7 +452,7 @@ namespace proyectoCalculadora
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(323, 474);
             this.Controls.Add(this.txtOperacion);
-            this.Controls.Add(this.btnGrados);
+            this.Controls.Add(this.btnFactorial);
             this.Controls.Add(this.btnPorcentaje);
             this.Controls.Add(this.btnGrafica);
             this.Controls.Add(this.btnE);
@@ -532,7 +534,7 @@ namespace proyectoCalculadora
         private System.Windows.Forms.Button btnE;
         private System.Windows.Forms.Button btnGrafica;
         private System.Windows.Forms.Button btnPorcentaje;
-        private System.Windows.Forms.Button btnGrados;
+        private System.Windows.Forms.Button btnFactorial;
         private System.Windows.Forms.TextBox txtOperacion;
     }
 }

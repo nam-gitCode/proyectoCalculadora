@@ -73,13 +73,42 @@ namespace proyectoCalculadora
                         operador = ")";
                         break;
                     }
-                    else if (cadena[c] == "s" || cadena[c] == "i" || cadena[c] == "n" || cadena[c] == "c" || cadena[c] == "o" || cadena[c] == "t" || cadena[c] == "a" || cadena[c] == "S" || cadena[c] == "C" || cadena[c] == "T")
+                    else if (cadena[c] == "%")
+                    {
+                        operador = "%";
+                        break;
+                    }
+                    else if (cadena[c] == "!")
+                    {
+                        operador = "!";
+                        break;
+                    }
+                    else if (cadena[c] == "s" || cadena[c] == "i" || cadena[c] == "n" || cadena[c] == "c" || cadena[c] == "o" || cadena[c] == "t" || cadena[c] == "a" || cadena[c] == "S" || cadena[c] == "C" || cadena[c] == "T" || cadena[c] == "l"|| cadena[c]=="g")
                     {
                         fTrigonometricas += cadena[c];
                     }
                     else if (cadena[c] != "+" || cadena[c] != "-" || cadena[c] != "*" || cadena[c] != "/" || cadena[c] != "^" || cadena[c] != "√" || cadena[c] != "(" || cadena[c] != ")" || cadena[c] != "s" || cadena[c] != "i" || cadena[c] != "n")
                     {
-                        nuevoNumero += cadena[c];
+                        if (cadena[c] == "1" || cadena[c] == "0")
+                        {
+                            if(cadena[c] == "1" && fTrigonometricas == "log")
+                            {
+                                fTrigonometricas += cadena[c];
+                            }
+                            else if(cadena[c] == "0" && fTrigonometricas == "log1")
+                            {
+                                fTrigonometricas += cadena[c];
+                            }
+                            else
+                            {
+                                nuevoNumero += cadena[c];
+                            }
+                        }
+                        else
+                        {
+                            nuevoNumero += cadena[c];
+                        }
+                        
                     }
                 }
 

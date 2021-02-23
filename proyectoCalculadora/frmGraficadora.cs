@@ -163,5 +163,10 @@ namespace proyectoCalculadora
         {
             txtFuncion.Text += "√";
         }
+
+        private void btnEuler_Click(object sender, EventArgs e)
+        {
+            txtFuncion.Text += "e";
+        }
     }
 }

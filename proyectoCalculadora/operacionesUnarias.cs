@@ -23,14 +23,14 @@ namespace proyectoCalculadora
 
         }
 
-        public double LogN()
+        public double LogN(double x)
         {
-            return Math.Log(this.Operando1);
+            return Math.Log(x);
         }
 
-        public double Log10()
+        public double Log10(double x)
         {
-            return Math.Log10(this.Operando1);
+            return Math.Log10(x);
         }
     }
 }

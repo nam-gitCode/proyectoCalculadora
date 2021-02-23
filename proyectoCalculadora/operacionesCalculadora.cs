@@ -17,6 +17,10 @@ namespace proyectoCalculadora
             {
                 Operando1 = Math.PI;
             }
+            else if (operacion[posicion - 1] == "e")
+            {
+                Operando1 = Math.E;
+            }
             else
             {
                 Operando1 = double.Parse(operacion[posicion - 1]);
@@ -30,11 +34,24 @@ namespace proyectoCalculadora
             {
                 Operando2 = Math.PI;
             }
+            else if (operacion[posicion + 1] == "e")
+            {
+                Operando2 = Math.E;
+            }
             else
             {
                 Operando2 = double.Parse(operacion[posicion + 1]);
             }
             return Operando2;
+        }
+
+        public double factorial(double n)
+        {
+            if (n == 1 || n == 0)
+            {
+                return 1;
+            }
+            return n * factorial(n - 1);
         }
 
         public string calcular(List<string> operacion)
@@ -44,12 +61,13 @@ namespace proyectoCalculadora
             double tmpResultado = 0;
             int jerarquia = 0;
             int posicion = 0;
+            
 
             while (operacion.Count > 1)
             {
                 for (int i = 0; i < operacion.Count; i++)
                 {
-                    if (operacion[i] == "+" || operacion[i] == "-" || operacion[i] == "*" || operacion[i] == "/" || operacion[i] == "^" || operacion[i] == "√" || operacion[i] == "sin" || operacion[i] == "cos" || operacion[i] == "tan" || operacion[i] == "aSin" || operacion[i] == "aCos" || operacion[i] == "aTan")
+                    if (operacion[i] == "+" || operacion[i] == "-" || operacion[i] == "*" || operacion[i] == "/" || operacion[i] == "^" || operacion[i] == "√" || operacion[i] == "sin" || operacion[i] == "cos" || operacion[i] == "tan" || operacion[i] == "aSin" || operacion[i] == "aCos" || operacion[i] == "aTan"||operacion[i]=="ln" || operacion[i] == "log10" || operacion[i] == "%" || operacion[i] == "!")
                     {
                         if (operacion[i] == "+")
                         {
@@ -105,7 +123,25 @@ namespace proyectoCalculadora
                                 jerarquia = x;
                             }
                         }
-                        else if(operacion[i] == "sin" || operacion[i] == "cos" || operacion[i] == "tan" || operacion[i] == "aSin" || operacion[i] == "aCos" || operacion[i] == "aTan")
+                        else if (operacion[i] == "%")
+                        {
+                            x = 9;
+                            if (x > jerarquia)
+                            {
+                                posicion = i;
+                                jerarquia = x;
+                            }
+                        }
+                        else if (operacion[i] == "!")
+                        {
+                            x = 9;
+                            if (x > jerarquia)
+                            {
+                                posicion = i;
+                                jerarquia = x;
+                            }
+                        }
+                        else if(operacion[i] == "sin" || operacion[i] == "cos" || operacion[i] == "tan" || operacion[i] == "aSin" || operacion[i] == "aCos" || operacion[i] == "aTan" || operacion[i]=="ln" || operacion[i] == "log10")
                         {
                             x = 8;
                             if (x > jerarquia)
@@ -269,6 +305,47 @@ namespace proyectoCalculadora
                             operacion.RemoveAt(posicion + 1);
                             operacion.RemoveAt(posicion + 1);
                         }
+                    }
+                    else if (operacion[posicion] == "ln")
+                    {
+                        encontrarPiDelante(operacion, posicion + 1);
+                        tmpResultado = opUnarias.LogN(Operando2);
+                        operacion[posicion] = tmpResultado.ToString();
+                        if (operacion[posicion + 3] == ")")
+                        {
+                            operacion.RemoveAt(posicion + 1);
+                            operacion.RemoveAt(posicion + 1);
+                            operacion.RemoveAt(posicion + 1);
+                        }
+                    }
+                    else if (operacion[posicion] == "log10")
+                    {
+                        encontrarPiDelante(operacion, posicion + 1);
+                        tmpResultado = opUnarias.Log10(Operando2);
+                        operacion[posicion] = tmpResultado.ToString();
+                        if (operacion[posicion + 3] == ")")
+                        {
+                            operacion.RemoveAt(posicion + 1);
+                            operacion.RemoveAt(posicion + 1);
+                            operacion.RemoveAt(posicion + 1);
+                        }
+                    }
+                }
+                else if (jerarquia == 9)
+                {
+                    if (operacion[posicion] == "%")
+                    {
+                        encontrarPiAtras(operacion, posicion);
+                        tmpResultado = Operando1 * 0.01;
+                        operacion[posicion - 1] = tmpResultado.ToString();
+                        operacion.RemoveAt(posicion);
+                    }
+                    else if(operacion[posicion] == "!")
+                    {
+                        encontrarPiAtras(operacion, posicion);
+                        tmpResultado = factorial(Operando1);
+                        operacion[posicion - 1] = tmpResultado.ToString();
+                        operacion.RemoveAt(posicion);
                     }
                 }
 

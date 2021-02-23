@@ -29,9 +29,9 @@ namespace proyectoCalculadora
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chrGrafica = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFuncion = new System.Windows.Forms.TextBox();
@@ -41,23 +41,24 @@ namespace proyectoCalculadora
             this.btnPotencia = new System.Windows.Forms.Button();
             this.btnPi = new System.Windows.Forms.Button();
             this.btnRaiz = new System.Windows.Forms.Button();
+            this.btnEuler = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chrGrafica)).BeginInit();
             this.SuspendLayout();
             // 
             // chrGrafica
             // 
-            chartArea6.Name = "ChartArea1";
-            this.chrGrafica.ChartAreas.Add(chartArea6);
-            legend6.Name = "Legend1";
-            this.chrGrafica.Legends.Add(legend6);
+            chartArea1.Name = "ChartArea1";
+            this.chrGrafica.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chrGrafica.Legends.Add(legend1);
             this.chrGrafica.Location = new System.Drawing.Point(12, 12);
             this.chrGrafica.Name = "chrGrafica";
-            series6.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.Legend = "Legend1";
-            series6.Name = "f(x)";
-            this.chrGrafica.Series.Add(series6);
+            series1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "f(x)";
+            this.chrGrafica.Series.Add(series1);
             this.chrGrafica.Size = new System.Drawing.Size(300, 300);
             this.chrGrafica.TabIndex = 0;
             this.chrGrafica.Text = "grafica";
@@ -138,11 +139,22 @@ namespace proyectoCalculadora
             this.btnRaiz.UseVisualStyleBackColor = true;
             this.btnRaiz.Click += new System.EventHandler(this.btnRaiz_Click);
             // 
+            // btnEuler
+            // 
+            this.btnEuler.Location = new System.Drawing.Point(318, 101);
+            this.btnEuler.Name = "btnEuler";
+            this.btnEuler.Size = new System.Drawing.Size(24, 23);
+            this.btnEuler.TabIndex = 9;
+            this.btnEuler.Text = "e";
+            this.btnEuler.UseVisualStyleBackColor = true;
+            this.btnEuler.Click += new System.EventHandler(this.btnEuler_Click);
+            // 
             // frmGraficadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 484);
+            this.Controls.Add(this.btnEuler);
             this.Controls.Add(this.btnRaiz);
             this.Controls.Add(this.btnPi);
             this.Controls.Add(this.btnPotencia);
@@ -172,5 +184,6 @@ namespace proyectoCalculadora
         private System.Windows.Forms.Button btnPotencia;
         private System.Windows.Forms.Button btnPi;
         private System.Windows.Forms.Button btnRaiz;
+        private System.Windows.Forms.Button btnEuler;
     }
 }

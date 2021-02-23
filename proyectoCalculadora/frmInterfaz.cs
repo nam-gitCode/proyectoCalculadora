@@ -175,7 +175,7 @@ namespace proyectoCalculadora
 
         private void btnE_Click(object sender, EventArgs e)
         {
-            txtPantalla.Text += "e^(";
+            txtPantalla.Text += "e";
         }
 
         private void btnPorcentaje_Click(object sender, EventArgs e)
@@ -191,7 +191,7 @@ namespace proyectoCalculadora
             txtOperacion.Enabled = false;
             List<string> operacionBase = ltCalcu.cadenaOperacion(baseOp);
 
-            txtPantalla.Text = opCalculadora.calcular(operacionBase);
+            txtPantalla.Text = Math.Round(double.Parse(opCalculadora.calcular(operacionBase)),9).ToString();
         }
 
         private void btnBorrar_Click(object sender, EventArgs e)
@@ -211,6 +211,11 @@ namespace proyectoCalculadora
         {
             frmGraficadora formGrafica = new frmGraficadora();
             formGrafica.Show();
+        }
+
+        private void btnFactorial_Click(object sender, EventArgs e)
+        {
+            txtPantalla.Text += "!";
         }
     }
 }

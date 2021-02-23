@@ -16,6 +16,10 @@ namespace proyectoCalculadora
             {
                 Operando1 = Math.PI;
             }
+            else if(operacion[posicion -1] == "e")
+            {
+                Operando1 = Math.E;
+            }
             else
             {
                 Operando1 = double.Parse(operacion[posicion - 1]);
@@ -28,6 +32,10 @@ namespace proyectoCalculadora
             if (operacion[posicion + 1] == "π")
             {
                 Operando2 = Math.PI;
+            }
+            else if (operacion[posicion + 1] == "e")
+            {
+                Operando2 = Math.E;
             }
             else
             {
