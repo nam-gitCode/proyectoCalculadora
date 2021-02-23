@@ -29,6 +29,7 @@ namespace proyectoCalculadora
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInterfaz));
             this.txtPantalla = new System.Windows.Forms.TextBox();
             this.btn7 = new System.Windows.Forms.Button();
             this.btn8 = new System.Windows.Forms.Button();
@@ -50,7 +51,7 @@ namespace proyectoCalculadora
             this.btnPi = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnParentecisA = new System.Windows.Forms.Button();
+            this.btnAcercaDe = new System.Windows.Forms.Button();
             this.btnParentecisB = new System.Windows.Forms.Button();
             this.btnSeno = new System.Windows.Forms.Button();
             this.btnCoseno = new System.Windows.Forms.Button();
@@ -67,6 +68,8 @@ namespace proyectoCalculadora
             this.btnPorcentaje = new System.Windows.Forms.Button();
             this.btnFactorial = new System.Windows.Forms.Button();
             this.txtOperacion = new System.Windows.Forms.TextBox();
+            this.btnCorcheteA = new System.Windows.Forms.Button();
+            this.btnCorcheteC = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtPantalla
@@ -77,6 +80,7 @@ namespace proyectoCalculadora
             this.txtPantalla.Size = new System.Drawing.Size(299, 50);
             this.txtPantalla.TabIndex = 0;
             this.txtPantalla.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPantalla.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPantalla_KeyDown);
             // 
             // btn7
             // 
@@ -278,19 +282,19 @@ namespace proyectoCalculadora
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // btnParentecisA
+            // btnAcercaDe
             // 
-            this.btnParentecisA.Location = new System.Drawing.Point(73, 188);
-            this.btnParentecisA.Name = "btnParentecisA";
-            this.btnParentecisA.Size = new System.Drawing.Size(55, 40);
-            this.btnParentecisA.TabIndex = 21;
-            this.btnParentecisA.Text = "(";
-            this.btnParentecisA.UseVisualStyleBackColor = true;
-            this.btnParentecisA.Click += new System.EventHandler(this.btnParentecisA_Click);
+            this.btnAcercaDe.Location = new System.Drawing.Point(13, 464);
+            this.btnAcercaDe.Name = "btnAcercaDe";
+            this.btnAcercaDe.Size = new System.Drawing.Size(298, 40);
+            this.btnAcercaDe.TabIndex = 21;
+            this.btnAcercaDe.Text = "Instrucciones + Lista de Integrantes";
+            this.btnAcercaDe.UseVisualStyleBackColor = true;
+            this.btnAcercaDe.Click += new System.EventHandler(this.btnAcercaDe_Click);
             // 
             // btnParentecisB
             // 
-            this.btnParentecisB.Location = new System.Drawing.Point(134, 188);
+            this.btnParentecisB.Location = new System.Drawing.Point(13, 417);
             this.btnParentecisB.Name = "btnParentecisB";
             this.btnParentecisB.Size = new System.Drawing.Size(55, 40);
             this.btnParentecisB.TabIndex = 22;
@@ -410,9 +414,9 @@ namespace proyectoCalculadora
             // 
             // btnGrafica
             // 
-            this.btnGrafica.Location = new System.Drawing.Point(12, 418);
+            this.btnGrafica.Location = new System.Drawing.Point(74, 418);
             this.btnGrafica.Name = "btnGrafica";
-            this.btnGrafica.Size = new System.Drawing.Size(299, 40);
+            this.btnGrafica.Size = new System.Drawing.Size(237, 40);
             this.btnGrafica.TabIndex = 34;
             this.btnGrafica.Text = "Graficadora";
             this.btnGrafica.UseVisualStyleBackColor = true;
@@ -446,11 +450,34 @@ namespace proyectoCalculadora
             this.txtOperacion.Size = new System.Drawing.Size(299, 20);
             this.txtOperacion.TabIndex = 37;
             // 
+            // btnCorcheteA
+            // 
+            this.btnCorcheteA.Location = new System.Drawing.Point(73, 188);
+            this.btnCorcheteA.Name = "btnCorcheteA";
+            this.btnCorcheteA.Size = new System.Drawing.Size(55, 40);
+            this.btnCorcheteA.TabIndex = 38;
+            this.btnCorcheteA.Text = "[";
+            this.btnCorcheteA.UseVisualStyleBackColor = true;
+            this.btnCorcheteA.Click += new System.EventHandler(this.btnCorcheteA_Click);
+            // 
+            // btnCorcheteC
+            // 
+            this.btnCorcheteC.Location = new System.Drawing.Point(134, 188);
+            this.btnCorcheteC.Name = "btnCorcheteC";
+            this.btnCorcheteC.Size = new System.Drawing.Size(55, 40);
+            this.btnCorcheteC.TabIndex = 39;
+            this.btnCorcheteC.Text = "]";
+            this.btnCorcheteC.UseVisualStyleBackColor = true;
+            this.btnCorcheteC.Click += new System.EventHandler(this.btnCorcheteC_Click);
+            // 
             // frmInterfaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(323, 474);
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.ClientSize = new System.Drawing.Size(323, 514);
+            this.Controls.Add(this.btnCorcheteC);
+            this.Controls.Add(this.btnCorcheteA);
             this.Controls.Add(this.txtOperacion);
             this.Controls.Add(this.btnFactorial);
             this.Controls.Add(this.btnPorcentaje);
@@ -467,7 +494,7 @@ namespace proyectoCalculadora
             this.Controls.Add(this.btnCoseno);
             this.Controls.Add(this.btnSeno);
             this.Controls.Add(this.btnParentecisB);
-            this.Controls.Add(this.btnParentecisA);
+            this.Controls.Add(this.btnAcercaDe);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnPi);
@@ -489,6 +516,7 @@ namespace proyectoCalculadora
             this.Controls.Add(this.btn8);
             this.Controls.Add(this.btn7);
             this.Controls.Add(this.txtPantalla);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInterfaz";
             this.Text = "Calculadora";
             this.ResumeLayout(false);
@@ -519,7 +547,7 @@ namespace proyectoCalculadora
         private System.Windows.Forms.Button btnPi;
         private System.Windows.Forms.Button btnBorrar;
         private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.Button btnParentecisA;
+        private System.Windows.Forms.Button btnAcercaDe;
         private System.Windows.Forms.Button btnParentecisB;
         private System.Windows.Forms.Button btnSeno;
         private System.Windows.Forms.Button btnCoseno;
@@ -536,5 +564,7 @@ namespace proyectoCalculadora
         private System.Windows.Forms.Button btnPorcentaje;
         private System.Windows.Forms.Button btnFactorial;
         private System.Windows.Forms.TextBox txtOperacion;
+        private System.Windows.Forms.Button btnCorcheteA;
+        private System.Windows.Forms.Button btnCorcheteC;
     }
 }

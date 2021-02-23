@@ -8,6 +8,7 @@ namespace proyectoCalculadora
 {
     class lectorCalculadora
     {
+        operacionesCalculadora opCalculadora = new operacionesCalculadora();
         public List<string> cadenaOperacion (string baseOp)
         {
             List<string> cadena = new List<string>() { };
@@ -19,6 +20,10 @@ namespace proyectoCalculadora
             string nuevoNumero = "";
             string fTrigonometricas = "";
             char[] conversion;
+            bool verificarCorchete = true;
+            int corcheteRango = 0;
+            int contadorPosicion = 0;
+            int contadorPosicion2 = 0;
 
             conversion = baseOp.ToCharArray();
 
@@ -83,6 +88,16 @@ namespace proyectoCalculadora
                         operador = "!";
                         break;
                     }
+                    else if (cadena[c] == "[")
+                    {
+                        operador = "[";
+                        break;
+                    }
+                    else if (cadena[c] == "]")
+                    {
+                        operador = "]";
+                        break;
+                    }
                     else if (cadena[c] == "s" || cadena[c] == "i" || cadena[c] == "n" || cadena[c] == "c" || cadena[c] == "o" || cadena[c] == "t" || cadena[c] == "a" || cadena[c] == "S" || cadena[c] == "C" || cadena[c] == "T" || cadena[c] == "l"|| cadena[c]=="g")
                     {
                         fTrigonometricas += cadena[c];
@@ -138,7 +153,50 @@ namespace proyectoCalculadora
             {
                 cadenaFinal.Remove("");
             }
+            // Inicio Anidados
 
+            while(verificarCorchete == true)
+            {
+                verificarCorchete = false;
+                for (int i = 0; i < cadenaFinal.Count; i++)
+                {
+                    if (cadenaFinal[i] == "[")
+                    {
+                        contadorPosicion = i;
+                        contadorPosicion2 = i;
+                        corcheteRango = corcheteRango + 1;
+                    }
+                }
+
+                List<string> tmpCadenaCorchete = new List<string>() { };
+
+                for (int i = contadorPosicion; i < cadenaFinal.Count; i++)
+                {
+                    if (cadenaFinal[contadorPosicion] != "]")
+                    {
+                        string datoCor = cadenaFinal[contadorPosicion];
+                        contadorPosicion = contadorPosicion + 1;
+                        tmpCadenaCorchete.Add(datoCor);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                tmpCadenaCorchete.RemoveAt(0);
+                cadenaFinal[contadorPosicion2] = opCalculadora.calcular(tmpCadenaCorchete);
+                cadenaFinal.RemoveRange(contadorPosicion2 + 1, contadorPosicion - contadorPosicion2);
+
+                for (int i = 0; i < cadenaFinal.Count; i++)
+                {
+                    if (cadenaFinal[i] == "[")
+                    {
+                        verificarCorchete = true;
+                    }
+                }
+            }
+
+            // Final Pruebas
             return cadenaFinal;
 
         }

@@ -41,6 +41,10 @@ namespace proyectoCalculadora
             string operador = "";
             string nuevoNumero = "";
             char[] conversion;
+            bool verificarCorchete = true;
+            int corcheteRango = 0;
+            int contadorPosicion = 0;
+            int contadorPosicion2 = 0;
 
             conversion = baseOp.ToCharArray();
 
@@ -93,6 +97,16 @@ namespace proyectoCalculadora
                     else if (cadena[c] == ")")
                     {
                         operador = ")";
+                        break;
+                    }
+                    else if (cadena[c] == "[")
+                    {
+                        operador = "[";
+                        break;
+                    }
+                    else if (cadena[c] == "]")
+                    {
+                        operador = "]";
                         break;
                     }
                     else if (cadena[c] != "+" || cadena[c] != "-" || cadena[c] != "*" || cadena[c] != "/" || cadena[c] != "^" || cadena[c] != "√" || cadena[c] != "(" || cadena[c] != ")")
@@ -151,7 +165,7 @@ namespace proyectoCalculadora
 
         private void btnPotencia_Click(object sender, EventArgs e)
         {
-            txtFuncion.Text += "^";
+            txtFuncion.Text += "^(";
         }
 
         private void btnPi_Click(object sender, EventArgs e)
@@ -161,12 +175,132 @@ namespace proyectoCalculadora
 
         private void btnRaiz_Click(object sender, EventArgs e)
         {
-            txtFuncion.Text += "√";
+            txtFuncion.Text += "√(";
         }
 
         private void btnEuler_Click(object sender, EventArgs e)
         {
             txtFuncion.Text += "e";
+        }
+
+        private void txtFuncion_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+
+                    string baseOp = txtFuncion.Text;
+                    List<string> cadena = new List<string>() { };
+                    List<string> cadenaFinal = new List<string>() { };
+
+                    string x = "";
+                    int contador = 0;
+                    string operador = "";
+                    string nuevoNumero = "";
+                    char[] conversion;
+
+                    conversion = baseOp.ToCharArray();
+
+                    for (int i = 0; i < conversion.Length; i++)
+                    {
+                        x = conversion[i].ToString();
+                        cadena.Add(x);
+                    }
+
+                    while (cadena.Count > 0)
+                    {
+                        for (int c = 0; c < cadena.Count; c++)
+                        {
+                            contador = contador + 1;
+                            if (cadena[c] == "+")
+                            {
+                                operador = "+";
+                                break;
+                            }
+                            else if (cadena[c] == "-")
+                            {
+                                operador = "-";
+                                break;
+                            }
+                            else if (cadena[c] == "*")
+                            {
+                                operador = "*";
+                                break;
+                            }
+                            else if (cadena[c] == "/")
+                            {
+                                operador = "/";
+                                break;
+                            }
+                            else if (cadena[c] == "^")
+                            {
+                                operador = "^";
+                                break;
+                            }
+                            else if (cadena[c] == "√")
+                            {
+                                operador = "√";
+                                break;
+                            }
+                            else if (cadena[c] == "(")
+                            {
+                                operador = "(";
+                                break;
+                            }
+                            else if (cadena[c] == ")")
+                            {
+                                operador = ")";
+                                break;
+                            }
+                            else if (cadena[c] != "+" || cadena[c] != "-" || cadena[c] != "*" || cadena[c] != "/" || cadena[c] != "^" || cadena[c] != "√" || cadena[c] != "(" || cadena[c] != ")")
+                            {
+                                nuevoNumero += cadena[c];
+                            }
+                        }
+
+                        cadenaFinal.Add(nuevoNumero);
+                        cadenaFinal.Add(operador);
+
+                        cadena.RemoveRange(0, contador);
+                        contador = 0;
+                        nuevoNumero = "";
+                    }
+
+                    if (cadenaFinal[cadenaFinal.Count - 1] == "+" || cadenaFinal[cadenaFinal.Count - 1] == "-" || cadenaFinal[cadenaFinal.Count - 1] == "*" || cadenaFinal[cadenaFinal.Count - 1] == "/")
+                    {
+                        cadenaFinal.RemoveAt(cadenaFinal.Count - 1);
+                    }
+
+                    for (int i = 0; i < cadenaFinal.Count; i++)
+                    {
+                        cadenaFinal.Remove("");
+                    }
+
+                    List<string> funcion = cadenaFinal;
+
+                    List<string> tmpLista = new List<string>() { };
+                    int ejeX = -2;
+
+                    for (int ejeY = 0; ejeY < 5; ejeY++)
+                    {
+                        for (int i = 0; i < funcion.Count; i++)
+                        {
+                            if (funcion[i] == "x")
+                            {
+                                tmpLista.Add(ejeX.ToString());
+                            }
+                            else
+                            {
+                                tmpLista.Add(funcion[i]);
+                            }
+                        }
+                        chrGrafica.Series["f(x)"].Points.AddXY(Convert.ToDouble(ejeX), double.Parse(opG.calcular(tmpLista)));
+                        tmpLista.Clear();
+                        ejeX = ejeX + 1;
+                    }
+
+                    break;
+            }
         }
     }
 }

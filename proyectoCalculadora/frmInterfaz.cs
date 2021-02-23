@@ -118,11 +118,6 @@ namespace proyectoCalculadora
             txtPantalla.Text += "^(";
         }
 
-        private void btnParentecisA_Click(object sender, EventArgs e)
-        {
-            txtPantalla.Text += "(";
-        }
-
         private void btnParentecisB_Click(object sender, EventArgs e)
         {
             txtPantalla.Text += ")";
@@ -196,7 +191,14 @@ namespace proyectoCalculadora
 
         private void btnBorrar_Click(object sender, EventArgs e)
         {
-            txtPantalla.Text = txtPantalla.Text.Substring(0, txtPantalla.Text.Length - 1);
+            if (string.IsNullOrEmpty(txtPantalla.Text))
+            {
+
+            }
+            else
+            {
+                txtPantalla.Text = txtPantalla.Text.Substring(0, txtPantalla.Text.Length - 1);
+            }
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -211,11 +213,54 @@ namespace proyectoCalculadora
         {
             frmGraficadora formGrafica = new frmGraficadora();
             formGrafica.Show();
+            MessageBox.Show("Instrucciones:\n   *La variable introducida siempre debe ser x\n   *Cerrar siempre los paréntesis abiertos\n   *Acompañar siempre a la variable x de su operador: \n       No Permitido: 2x\n       Permitido: 2*x \n  *No se grafican funciones con más de 1 variable");
         }
 
         private void btnFactorial_Click(object sender, EventArgs e)
         {
             txtPantalla.Text += "!";
+        }
+
+        private void txtPantalla_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Enter:
+                    string baseOp = txtPantalla.Text;
+                    txtOperacion.Enabled = true;
+                    txtOperacion.Text = baseOp;
+                    txtOperacion.Enabled = false;
+                    List<string> operacionBase = ltCalcu.cadenaOperacion(baseOp);
+
+                    txtPantalla.Text = Math.Round(double.Parse(opCalculadora.calcular(operacionBase)), 9).ToString();
+                    break;
+                case Keys.Back:
+                    if(string.IsNullOrEmpty(txtPantalla.Text))
+                    {
+
+                    }
+                    else
+                    {
+                        txtPantalla.Text = txtPantalla.Text.Substring(0, txtPantalla.Text.Length - 1);
+                        txtPantalla.SelectionStart = txtPantalla.Text.Length;
+                    }
+                    break;
+            }
+        }
+
+        private void btnCorcheteA_Click(object sender, EventArgs e)
+        {
+            txtPantalla.Text += "[";
+        }
+
+        private void btnCorcheteC_Click(object sender, EventArgs e)
+        {
+            txtPantalla.Text += "]";
+        }
+
+        private void btnAcercaDe_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Integrantes:\n    Kevin Estuardo Secay Estrada - 2000083\n    Esdras Alejandro Salazar Carranza - 2000158\n    Magdiel David López González - 2000171\n    Sergio Noel Perez Quiroa-2000154\n\nInstrucciones:\n *Para ingresar operaciones anidadas utilizar [\n       Ejemplo: 2+[3*4-2+[81/√(3)]]\n *Cerrar el parentesis en las operaciones como raiz, potencia, sen, etc.");
         }
     }
 }

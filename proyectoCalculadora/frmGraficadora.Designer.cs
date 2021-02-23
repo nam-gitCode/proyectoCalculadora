@@ -32,6 +32,7 @@ namespace proyectoCalculadora
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGraficadora));
             this.chrGrafica = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFuncion = new System.Windows.Forms.TextBox();
@@ -47,6 +48,7 @@ namespace proyectoCalculadora
             // 
             // chrGrafica
             // 
+            this.chrGrafica.BackColor = System.Drawing.Color.DarkGray;
             chartArea1.Name = "ChartArea1";
             this.chrGrafica.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
@@ -78,6 +80,7 @@ namespace proyectoCalculadora
             this.txtFuncion.Name = "txtFuncion";
             this.txtFuncion.Size = new System.Drawing.Size(267, 20);
             this.txtFuncion.TabIndex = 2;
+            this.txtFuncion.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFuncion_KeyDown);
             // 
             // btnGraficar
             // 
@@ -91,7 +94,7 @@ namespace proyectoCalculadora
             // 
             // btnCerrarGraf
             // 
-            this.btnCerrarGraf.Location = new System.Drawing.Point(12, 437);
+            this.btnCerrarGraf.Location = new System.Drawing.Point(16, 437);
             this.btnCerrarGraf.Name = "btnCerrarGraf";
             this.btnCerrarGraf.Size = new System.Drawing.Size(296, 40);
             this.btnCerrarGraf.TabIndex = 4;
@@ -101,7 +104,7 @@ namespace proyectoCalculadora
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(12, 391);
+            this.btnLimpiar.Location = new System.Drawing.Point(16, 391);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(296, 40);
             this.btnLimpiar.TabIndex = 5;
@@ -153,6 +156,7 @@ namespace proyectoCalculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(350, 484);
             this.Controls.Add(this.btnEuler);
             this.Controls.Add(this.btnRaiz);
@@ -164,6 +168,7 @@ namespace proyectoCalculadora
             this.Controls.Add(this.txtFuncion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.chrGrafica);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGraficadora";
             this.Text = "Graficadora";
             this.Load += new System.EventHandler(this.frmGraficadora_Load);
